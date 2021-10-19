@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField]
-    [Tooltip("Just for debugging, adds some velocity during OnEnable")]
-    private Vector3 initialVelocity;
+    private Vector3 RandomVector(float min, float max) {
+     var x = Random.Range(min, max);
+     var y = Random.Range(min, max);
+     var z = Random.Range(min, max);
+     return new Vector3(x, y, z);
+ }
 
     [SerializeField]
     private float minVelocity = 10f;
@@ -17,7 +20,7 @@ public class Movement : MonoBehaviour
     private void OnEnable()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = initialVelocity;
+        rb.velocity = RandomVector(2f, 10f);
     }
 
     private void Update()
