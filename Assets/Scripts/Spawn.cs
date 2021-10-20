@@ -13,6 +13,7 @@ public class Spawn : MonoBehaviour
     private float spawnTime;
     private int spawnCount;
     public int maxSpawn = 30;
+    public string objectName= "Agent";
  
     void Start()
     {
@@ -26,7 +27,8 @@ public class Spawn : MonoBehaviour
             if(timer >= spawnTime)
             {
                 spawnTime = Random.Range(minTimeSpawn, maxTimeSpawn);
-                Instantiate(spawnObject, spawnPoint, Quaternion.identity);
+                var clone = Instantiate(spawnObject, spawnPoint, Quaternion.identity);
+                clone.name = objectName + " " + spawnCount;
                 timer = 0;
                 spawnCount++;
             }

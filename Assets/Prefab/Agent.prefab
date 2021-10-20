@@ -154,3 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   damage: 1
+  currentHealth: 0
