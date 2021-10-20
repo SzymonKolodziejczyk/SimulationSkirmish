@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
  }
 
     [SerializeField]
-    private float minVelocity = 10f;
+    private float minVelocity = 5f;
 
     private Vector3 lastFrameVelocity;
     private Rigidbody rb;
@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     private void OnEnable()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = RandomVector(5f, 10f);
+        rb.velocity = RandomVector(2f, 5f);
     }
 
     private void Update()

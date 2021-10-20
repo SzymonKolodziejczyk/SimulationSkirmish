@@ -6,20 +6,23 @@ public class Spawn : MonoBehaviour
 {
     public GameObject spawnObject;
     private Vector3 spawnPoint;
-    public int minTimeSpawn = 2;
-    public int maxTimeSpawn = 10;
-    float timer = 0;
-    private float spawnInterval;
-    private float spawnTime;
-    private int spawnCount;
-    public int maxSpawn = 30;
-    public string objectName= "Agent";
+
+    public int minTimeSpawn = 2; // Minimum time needed to spawn agent
+    public int maxTimeSpawn = 10; // Maximum time needed to spawn agent
+    float timer = 0; // Game Time
+
+    private float spawnTime; // Time needed to spawn agent
+
+    private int spawnCount; // Count how many agents were spawned
+    public int maxSpawn = 30; // Maximum amount of agents on screen
+
+    public string objectName= "Agent"; // Change the name of agent
  
     void Start()
     {
         timer = 0;
     }
- 
+
     private void Update()
     {
         if(spawnCount < maxSpawn){
