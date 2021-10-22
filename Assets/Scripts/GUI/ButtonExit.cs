@@ -7,7 +7,7 @@ public class ButtonExit : MonoBehaviour
 {
     bool isPaused = true;
 
-    public void pauseGame()
+    public void unPauseGame()
     {
         if (isPaused) {
             Time.timeScale = 1;
