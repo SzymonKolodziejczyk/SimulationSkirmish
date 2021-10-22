@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GlowObject : MonoBehaviour
 {   
-    public Renderer rend;
+    private Renderer rend;
 
     void Start()
     {
@@ -28,4 +28,5 @@ public class GlowObject : MonoBehaviour
     {
         rend.material.color = Color.blue;
     }
+    
 }
