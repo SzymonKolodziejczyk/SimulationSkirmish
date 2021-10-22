@@ -10,6 +10,6 @@ public class ShowStats : MonoBehaviour
     void OnMouseDown ()
     {  
         popupPanel.SetActive(true);
+        Time.timeScale = 0;
     }
-
 }
