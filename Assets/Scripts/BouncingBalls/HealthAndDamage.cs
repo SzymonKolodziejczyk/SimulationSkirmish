@@ -9,7 +9,6 @@ public class HealthAndDamage : MonoBehaviour
     public int currentHealth;
     public int damage = 1;
     public Text healthInformation;
-    public Text AgentName;
 
     void Start()
     {
