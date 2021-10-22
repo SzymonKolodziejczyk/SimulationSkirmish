@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawn : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class Spawn : MonoBehaviour
     private int spawnCount; // Count how many agents were spawned
     public int maxSpawn = 30; // Maximum amount of agents on screen
 
-    public string objectName= "Agent"; // Change the name of agent
+    public string nameOfAgent= "Agent"; // Change the name of agent
+    GameObject SpawnedName;
+    public Text AgentName;
  
     void Start()
     {
@@ -30,8 +33,9 @@ public class Spawn : MonoBehaviour
             if(timer >= spawnTime)
             {
                 spawnTime = Random.Range(minTimeSpawn, maxTimeSpawn);
-                var clone = Instantiate(spawnObject, spawnPoint, Quaternion.identity);
-                clone.name = objectName + " " + spawnCount;
+                SpawnedName = Instantiate(spawnObject, spawnPoint, Quaternion.identity);
+                SpawnedName.name = "" + nameOfAgent + " " + spawnCount;
+                AgentName.text = "" + SpawnedName + spawnCount;
                 timer = 0;
                 spawnCount++;
             }
